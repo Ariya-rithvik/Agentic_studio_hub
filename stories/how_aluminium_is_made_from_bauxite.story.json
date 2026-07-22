@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "title": "Aluminium Production",
+    "topic": "Bauxite to Aluminium",
+    "frames": 96,
+    "fps": 30,
+    "width": 960,
+    "height": 600,
+    "bg": "#ffffff"
+  },
+  "shot": {
+    "type": "ore_to_wire",
+    "params": {
+      "rockOut": [
+        0.5,
+        0.72
+      ],
+      "spoolIn": [
+        0.58,
+        0.9
+      ]
+    }
+  },
+  "overlays": [
+    {
+      "type": "hub",
+      "cx": 864,
+      "cy": 96,
+      "r": 56,
+      "active": 0,
+      "steps": [
+        "MINING",
+        "REFINING",
+        "SMELTING",
+        "ROLLING",
+        "DRAWING",
+        "FINISHING"
+      ]
+    },
+    {
+      "type": "counter_callout",
+      "anchor": [
+        0.95,
+        0.65,
+        0
+      ],
+      "dx": 168,
+      "dy": -46,
+      "drawStart": 14,
+      "drawEnd": 30,
+      "fadeStart": 64,
+      "fadeEnd": 80,
+      "label": "AL2O3",
+      "value": 50.5,
+      "unit": "%",
+      "decimals": 1,
+      "countStart": 30,
+      "countLock": 52
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Bauxite typically contains around 50-55% aluminium oxide",
+      "check": "counter locks at 50.5"
+    }
+  ]
+}

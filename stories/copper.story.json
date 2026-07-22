@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "title": "How Copper Is Made — Scene 1: Mining",
+    "topic": "copper refining",
+    "frames": 96, "fps": 30, "width": 960, "height": 600, "bg": "#ffffff"
+  },
+  "shot": {
+    "type": "ore_to_wire",
+    "params": { "rockOut": [0.50, 0.72], "spoolIn": [0.58, 0.90] }
+  },
+  "overlays": [
+    {
+      "type": "hub",
+      "cx": 864, "cy": 96, "r": 56, "active": 0,
+      "steps": ["MINING", "CRUSH", "FLOAT", "SMELT", "CONVERT", "REFINE"]
+    },
+    {
+      "type": "counter_callout",
+      "anchor": [0.95, 0.65, 0],
+      "dx": 168, "dy": -46,
+      "drawStart": 14, "drawEnd": 30, "fadeStart": 64, "fadeEnd": 80,
+      "label": "COPPER GRADE", "value": 0.5, "unit": "%", "decimals": 1,
+      "countStart": 30, "countLock": 52
+    }
+  ],
+  "facts": [
+    { "claim": "copper ore grade is about 0.5%", "check": "counter locks at 0.5%" }
+  ]
+}

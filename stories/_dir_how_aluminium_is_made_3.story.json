@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "title": "How Aluminium is Made",
+    "topic": "How aluminium is made",
+    "frames": 320,
+    "fps": 30,
+    "width": 960,
+    "height": 600,
+    "bg": "#ffffff"
+  },
+  "shot": {
+    "type": "crusher",
+    "params": {
+      "rockOut": [
+        0.5,
+        0.72
+      ],
+      "spoolIn": [
+        0.58,
+        0.9
+      ]
+    }
+  },
+  "overlays": [
+    {
+      "type": "hub",
+      "cx": 864,
+      "cy": 96,
+      "r": 56,
+      "active": 5,
+      "steps": [
+        "MATERIAL S",
+        "EXTRUSION",
+        "DRAWING",
+        "IRONING",
+        "NECKING",
+        "FINISHING"
+      ]
+    },
+    {
+      "type": "counter_callout",
+      "anchor": [
+        0.95,
+        0.65,
+        0
+      ],
+      "dx": 168,
+      "dy": -46,
+      "drawStart": 14,
+      "drawEnd": 30,
+      "fadeStart": 64,
+      "fadeEnd": 80,
+      "label": "MARKET INTRODUCTION SE",
+      "value": 1,
+      "unit": "season",
+      "decimals": 0,
+      "countStart": 30,
+      "countLock": 52
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Aluminium bottles are made through a multi-step process.",
+      "check": ""
+    }
+  ]
+}

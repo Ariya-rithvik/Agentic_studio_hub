@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic Studio Hub — Unified 3D, Video & Coding AI Engine</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons & Three.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    
+    <!-- Top Header -->
+    <header class="top-bar glass-header">
+      <div class="brand">
+        <div class="logo-icon">
+          <i class="fa-solid fa-cube"></i>
+        </div>
+        <div class="brand-text">
+          <span class="main-title">AGENTIC<span class="highlight">STUDIO</span></span>
+          <span class="sub-title">Omni-Creative Production Suite</span>
+        </div>
+      </div>
+
+      <div class="system-status">
+        <div class="status-pill ok">
+          <span class="dot"></span>
+          <span>OpenAI Codex: Connected</span>
+        </div>
+        <div class="status-pill info">
+          <span class="dot"></span>
+          <span>WebGL 3D Core: Ready</span>
+        </div>
+        <div class="status-pill success">
+          <span class="dot"></span>
+          <span>Video Pipeline: Standby</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button class="btn btn-secondary" id="btn-quick-run">
+          <i class="fa-solid fa-bolt"></i> Quick Agent Prompt
+        </button>
+        <button class="btn btn-primary" id="btn-export-project">
+          <i class="fa-solid fa-download"></i> Export Suite
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Area with Sidebar -->
+    <div class="main-layout">
+      
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar glass-panel">
+        <div class="nav-section">
+          <div class="section-title">SUITE MODULES</div>
+          
+          <button class="nav-tab active" data-tab="overview">
+            <i class="fa-solid fa-house"></i>
+            <div class="tab-info">
+              <span class="tab-title">Production Dashboard</span>
+              <span class="tab-desc">System Overview & Live Hub</span>
+            </div>
+          </button>
+
+          <button class="nav-tab" data-tab="agentic-3d">
+            <i class="fa-solid fa-cubes-stacked"></i>
+            <div class="tab-info">
+              <span class="tab-title">Agentic 3D Studio</span>
+              <span class="tab-desc">Mograph & Scene Generator</span>
+            </div>
+          </button>
+
+          <button class="nav-tab" data-tab="agentic-video">
+            <i class="fa-solid fa-film"></i>
+            <div class="tab-info">
+              <span class="tab-title">Agentic Video Editing</span>
+              <span class="tab-desc">Auto-Cutter & Reels Engine</span>
+            </div>
+          </button>
+
+          <button class="nav-tab" data-tab="agentic-coding">
+            <i class="fa-solid fa-code"></i>
+            <div class="tab-info">
+              <span class="tab-title">Agentic Coding Studio</span>
+              <span class="tab-desc">Codex Live & Incident Memory</span>
+            </div>
+          </button>
+        </div>
+
+        <div class="nav-section mt-auto">
+          <div class="section-title">QUICK LINKS</div>
+          <a class="nav-tab external-link" href="file:///d:/production_product/frontend/index.html" target="_blank">
+            <i class="fa-solid fa-rocket"></i>
+            <div class="tab-info">
+              <span class="tab-title">Production Product</span>
+              <span class="tab-desc">Root Dashboard</span>
+            </div>
+          </a>
+          <a class="nav-tab external-link" href="file:///d:/agentic3D/app.html" target="_blank">
+            <i class="fa-solid fa-clapperboard"></i>
+            <div class="tab-info">
+              <span class="tab-title">VERA Studio App</span>
+              <span class="tab-desc">Standalone 3D Engine</span>
+            </div>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Viewport / Workspace Panels -->
+      <main class="workspace">
+        
+        <!-- MODULE 1: OVERVIEW DASHBOARD -->
+        <section id="panel-overview" class="view-panel active">
+          <div class="panel-hero">
+            <div class="hero-content">
+              <h2>Welcome to Agentic Studio Hub</h2>
+              <p>An integrated production system bringing together 3D Motion Graphics, Agentic Video Editing, and AI Code Execution into a single workspace for content creators.</p>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-card">
+                <span class="stat-num">3-in-1</span>
+                <span class="stat-lbl">Unified Suites</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num">10x</span>
+                <span class="stat-lbl">Faster Render</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-num">$0</span>
+                <span class="stat-lbl">Software Cost</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Cards Grid -->
+          <div class="suite-grid">
+            
+            <!-- Card 1: Agentic 3D -->
+            <div class="feature-card glass-card">
+              <div class="card-badge purple">3D & VFX</div>
+              <div class="card-icon"><i class="fa-solid fa-cube"></i></div>
+              <h3>Agentic 3D Studio</h3>
+              <p>Generate 3D motion graphics (`mograph.mjs`), particle systems, and tank comparison charts using natural language prompts powered by OpenAI Codex.</p>
+              <div class="card-tags">
+                <span>Three.js</span> <span>WebGL</span> <span>mograph.mjs</span>
+              </div>
+              <button class="btn btn-outline switch-tab-btn" data-target="agentic-3d">Open 3D Studio <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- Card 2: Agentic Video Editing -->
+            <div class="feature-card glass-card">
+              <div class="card-badge blue">Video & Reels</div>
+              <div class="card-icon"><i class="fa-solid fa-scissors"></i></div>
+              <h3>Agentic Video Editing</h3>
+              <p>Turn long-form videos into viral shorts, automatic transcription scoring (Hook, Value, Flow), auto-captions, and vertical 9:16 reels.</p>
+              <div class="card-tags">
+                <span>Auto-Cut</span> <span>Reels 9:16</span> <span>FFmpeg</span>
+              </div>
+              <button class="btn btn-outline switch-tab-btn" data-target="agentic-video">Open Video Studio <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <!-- Card 3: Agentic Coding -->
+            <div class="feature-card glass-card">
+              <div class="card-badge green">AI Coding</div>
+              <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+              <h3>Agentic Coding & Memory</h3>
+              <p>Live Codex graphics synthesizer, Knowledge Graph Memory Pipeline (Cognee/LLM integration), and real-time visual bug detection.</p>
+              <div class="card-tags">
+                <span>OpenAI Codex</span> <span>Graph AI</span> <span>Web Engine</span>
+              </div>
+              <button class="btn btn-outline switch-tab-btn" data-target="agentic-coding">Open Coding Studio <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+          </div>
+
+          <!-- Live Integrated WebGL Preview Canvas -->
+          <div class="preview-hero-container glass-panel">
+            <div class="hero-canvas-header">
+              <div class="canvas-title">
+                <i class="fa-solid fa-display"></i> Live Unified WebGL Engine Viewport
+              </div>
+              <div class="canvas-controls">
+                <button class="canvas-btn" id="btn-toggle-spin"><i class="fa-solid fa-rotate"></i> Rotate</button>
+                <button class="canvas-btn" id="btn-toggle-wire"><i class="fa-solid fa-border-all"></i> Wireframe</button>
+                <button class="canvas-btn" id="btn-reset-cam"><i class="fa-solid fa-video"></i> Reset View</button>
+              </div>
+            </div>
+            <div id="hero-3d-canvas" class="webgl-canvas-holder"></div>
+          </div>
+        </section>
+
+
+        <!-- MODULE 2: AGENTIC 3D STUDIO -->
+        <section id="panel-agentic-3d" class="view-panel">
+          <div class="module-header">
+            <h2>🎨 Agentic 3D & Motion Graphics Studio</h2>
+            <p>Describe your 3D animation, scene graph, or data chart in plain text. Codex generates and executes live WebGL scenes.</p>
+          </div>
+
+          <div class="studio-workspace">
+            <!-- Left Prompt & Control Panel -->
+            <div class="control-column glass-panel">
+              <h3>Agentic Scene Prompt</h3>
+              
+              <div class="form-group">
+                <label>Prompt / Scene Description</label>
+                <textarea id="3d-prompt-input" rows="4" placeholder="e.g. Create a glowing futuristic neon particle ring rotating around a 3D metallic sphere with camera zoom"></textarea>
+              </div>
+
+              <div class="preset-chips">
+                <span class="chip" data-prompt="Futuristic glowing energy orb with orbit particles">Energy Orb</span>
+                <span class="chip" data-prompt="Comparison chart of water usage for beef, chicken, rice and wheat">Tank Chart</span>
+                <span class="chip" data-prompt="3D motion graphics typography title with camera dolly zoom">Mograph Title</span>
+                <span class="chip" data-prompt="Abstract geometric wave grid with dynamic lighting">Wave Grid</span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group flex-1">
+                  <label>Duration (frames)</label>
+                  <input type="number" id="3d-frames" value="120" min="30" max="600">
+                </div>
+                <div class="form-group flex-1">
+                  <label>Quality / FPS</label>
+                  <select id="3d-quality">
+                    <option value="60">60 FPS Ultra</option>
+                    <option value="30" selected>30 FPS Standard</option>
+                  </select>
+                </div>
+              </div>
+
+              <button class="btn btn-primary btn-full" id="btn-generate-3d">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Generate 3D Scene Code
+              </button>
+
+              <div class="agent-log-box" id="3d-log">
+                <div class="log-line info">[System] 3D Engine initialized. Awaiting prompt input...</div>
+              </div>
+            </div>
+
+            <!-- Right Viewport Panel -->
+            <div class="viewport-column glass-panel">
+              <div class="viewport-header">
+                <span><i class="fa-solid fa-play"></i> 3D Render Viewport</span>
+                <span class="badge purple">WebGL Live</span>
+              </div>
+              <div id="studio-3d-viewport" class="webgl-canvas-holder"></div>
+              <div class="viewport-timeline">
+                <button class="timeline-btn" id="btn-3d-play"><i class="fa-solid fa-play"></i></button>
+                <input type="range" id="3d-timeline-slider" min="0" max="100" value="0">
+                <span id="3d-frame-counter">0 / 120</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- MODULE 3: AGENTIC VIDEO EDITING -->
+        <section id="panel-agentic-video" class="view-panel">
+          <div class="module-header">
+            <h2>🎬 Agentic Video Editing & Shorts Engine</h2>
+            <p>Upload or link long-form footage. The AI scores high-value moments (Hook, Flow, Trend) and auto-cuts vertical 9:16 reels.</p>
+          </div>
+
+          <div class="studio-workspace">
+            <div class="control-column glass-panel">
+              <h3>Reels Auto-Cutter Setup</h3>
+
+              <div class="drop-zone" id="video-drop-zone">
+                <i class="fa-solid fa-cloud-arrow-up drop-icon"></i>
+                <p>Drag & Drop source video here, or click to browse</p>
+                <span class="sub-text">Supports MP4, MOV, WebM, MKV</span>
+                <input type="file" id="video-file-input" class="file-hidden" accept="video/*">
+              </div>
+
+              <div class="form-group">
+                <label>Or enter video path / URL</label>
+                <input type="text" id="video-path-input" placeholder="e.g. D:\like_as_first_all_will_be_blow.mp4">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group flex-1">
+                  <label>Max Clips</label>
+                  <input type="number" id="video-clip-count" value="3" min="1" max="10">
+                </div>
+                <div class="form-group flex-1">
+                  <label>Format</label>
+                  <select id="video-aspect">
+                    <option value="9:16">Vertical (9:16 Shorts/TikTok)</option>
+                    <option value="16:9">Horizontal (16:9 YouTube)</option>
+                  </select>
+                </div>
+              </div>
+
+              <button class="btn btn-primary btn-full" id="btn-analyze-video">
+                <i class="fa-solid fa-scissors"></i> Analyze & Extract Best Clips
+              </button>
+
+              <div class="agent-log-box" id="video-log">
+                <div class="log-line info">[Reels Engine] Ready to transcribe and score footage...</div>
+              </div>
+            </div>
+
+            <!-- Video Player & Clip Highlights -->
+            <div class="viewport-column glass-panel">
+              <div class="viewport-header">
+                <span><i class="fa-solid fa-film"></i> Video Player & Auto-Generated Clips</span>
+                <span class="badge blue">Score AI</span>
+              </div>
+              <div class="video-preview-wrapper">
+                <video id="main-video-player" controls poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80">
+                  <source src="./assets/sample_video.mp4" type="video/mp4">
+                  Your browser does not support video playback.
+                </video>
+              </div>
+
+              <div class="clip-cards-row">
+                <div class="clip-card active">
+                  <div class="clip-badge">Hook 9.8/10</div>
+                  <div class="clip-title">Clip 1: Opening Hook</div>
+                  <div class="clip-time">00:04 - 00:32 (28s)</div>
+                </div>
+                <div class="clip-card">
+                  <div class="clip-badge">Value 9.4/10</div>
+                  <div class="clip-title">Clip 2: Key Breakdown</div>
+                  <div class="clip-time">01:15 - 01:50 (35s)</div>
+                </div>
+                <div class="clip-card">
+                  <div class="clip-badge">Trend 9.1/10</div>
+                  <div class="clip-title">Clip 3: Call to Action</div>
+                  <div class="clip-time">02:40 - 03:05 (25s)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- MODULE 4: AGENTIC CODING STUDIO -->
+        <section id="panel-agentic-coding" class="view-panel">
+          <div class="module-header">
+            <h2>⚡ Agentic Coding & Incident Memory Studio</h2>
+            <p>Interactive OpenAI Codex code synthesizer, context-aware Knowledge Graph memory, and WebGL pipeline simulation.</p>
+          </div>
+
+          <div class="coding-workspace grid-2">
+            
+            <!-- Code Editor Side -->
+            <div class="code-panel glass-panel">
+              <div class="code-header">
+                <span><i class="fa-solid fa-code"></i> Codex Dynamic Script Synthesizer</span>
+                <button class="btn btn-sm btn-primary" id="btn-run-code"><i class="fa-solid fa-play"></i> Execute Code</button>
+              </div>
+              <div class="code-editor-box">
+                <textarea id="code-editor" class="fira-code" spellcheck="false">// OpenAI Codex Generated Scene Script
+import * as THREE from 'three';
+
+export function createScene(container) {
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  container.appendChild(renderer.domElement);
+
+  // Add agentic torus knot geometry
+  const geometry = new THREE.TorusKnotGeometry(1.8, 0.5, 128, 32);
+  const material = new THREE.MeshPhysicalMaterial({
+    color: 0x7c5cff,
+    emissive: 0x221155,
+    roughness: 0.1,
+    metalness: 0.8,
+    clearcoat: 1.0
+  });
+  
+  const torus = new THREE.Mesh(geometry, material);
+  scene.add(torus);
+
+  const light = new THREE.DirectionalLight(0xffffff, 2);
+  light.position.set(5, 5, 5);
+  scene.add(light);
+  scene.add(new THREE.AmbientLight(0x404040, 1.5));
+
+  camera.position.z = 5;
+
+  function animate() {
+    requestAnimationFrame(animate);
+    torus.rotation.x += 0.01;
+    torus.rotation.y += 0.015;
+    renderer.render(scene, camera);
+  }
+  animate();
+}
+                </textarea>
+              </div>
+            </div>
+
+            <!-- Execution Canvas & Memory Graph -->
+            <div class="execution-panel glass-panel">
+              <div class="code-header">
+                <span><i class="fa-solid fa-network-wired"></i> Graph Retrieval Memory & Output</span>
+                <span class="badge green">Live Graph</span>
+              </div>
+              <div id="coding-canvas-viewport" class="webgl-canvas-holder"></div>
+              
+              <div class="memory-status-card">
+                <h4><i class="fa-solid fa-brain"></i> Cognee Knowledge Memory Injected</h4>
+                <p>Entity extraction active: <code>[THREE.TorusKnotGeometry, MeshPhysicalMaterial, Renderer]</code></p>
+                <div class="metric-progress">
+                  <div class="metric-fill" style="width: 95%;"></div>
+                </div>
+                <span class="sub-text">Context Richness: 95% • Hallucination Risk: 0.2%</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

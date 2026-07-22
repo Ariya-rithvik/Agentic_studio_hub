@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "title": "How Copper is Made",
+    "topic": "How copper is made",
+    "frames": 268,
+    "fps": 30,
+    "width": 960,
+    "height": 600,
+    "bg": "#ffffff"
+  },
+  "shot": {
+    "type": "ore_to_wire",
+    "params": {
+      "rockOut": [
+        0.5,
+        0.72
+      ],
+      "spoolIn": [
+        0.58,
+        0.9
+      ]
+    }
+  },
+  "overlays": [
+    {
+      "type": "hub",
+      "cx": 864,
+      "cy": 96,
+      "r": 56,
+      "active": 4,
+      "steps": [
+        "EXTRACT",
+        "CRUSH",
+        "SEPARATE",
+        "REFINE",
+        "PURIFY",
+        "FINISH"
+      ]
+    },
+    {
+      "type": "counter_callout",
+      "anchor": [
+        0.95,
+        0.65,
+        0
+      ],
+      "dx": 168,
+      "dy": -46,
+      "drawStart": 14,
+      "drawEnd": 30,
+      "fadeStart": 64,
+      "fadeEnd": 80,
+      "label": "PURITY",
+      "value": 98,
+      "unit": "%",
+      "decimals": 0,
+      "countStart": 30,
+      "countLock": 52
+    }
+  ],
+  "facts": [
+    {
+      "claim": "The smelting process involves heating the copper concentrate to temperatures of up to 1200 degrees Celsius.",
+      "check": ""
+    }
+  ]
+}

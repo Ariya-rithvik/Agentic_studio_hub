@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "title": "How Copper is Made",
+    "topic": "How copper is made",
+    "frames": 235,
+    "fps": 30,
+    "width": 960,
+    "height": 600,
+    "bg": "#ffffff"
+  },
+  "shot": {
+    "type": "crusher",
+    "params": {
+      "rockOut": [
+        0.5,
+        0.72
+      ],
+      "spoolIn": [
+        0.58,
+        0.9
+      ]
+    }
+  },
+  "overlays": [
+    {
+      "type": "hub",
+      "cx": 864,
+      "cy": 96,
+      "r": 56,
+      "active": 0,
+      "steps": [
+        "MINING",
+        "CRUSHING",
+        "GRINDING",
+        "FLOATATION",
+        "SMELTING",
+        "REFINING"
+      ]
+    },
+    {
+      "type": "counter_callout",
+      "anchor": [
+        0.95,
+        0.65,
+        0
+      ],
+      "dx": 168,
+      "dy": -46,
+      "drawStart": 14,
+      "drawEnd": 30,
+      "fadeStart": 64,
+      "fadeEnd": 80,
+      "label": "KEY FIGURE",
+      "value": 0.5,
+      "unit": "%",
+      "decimals": 1,
+      "countStart": 30,
+      "countLock": 52
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Copper ore is typically mined from open-pit or underground mines.",
+      "check": ""
+    }
+  ]
+}
